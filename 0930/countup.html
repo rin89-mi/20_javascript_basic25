@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>カウントアップ装置</title>
+</head>
+
+<body>
+    <p id="counter"></p>
+    <button id="plus">+1</button>
+
+    <script>
+        //変数を使って０を代入
+        let count = 0
+        console.log(count); //コンソールにcountを表示 (コンソール　ディベロッパーツールのコンソール)
+        let counter = document.querySelector('#counter');
+        //documentはhtmlのこと
+        //cssセレクターは、cssで使うセレクターのこと
+        console.log(counter); //pが入っている
+        //p要素のテキストをcount(0)にする
+        counter.textContent = count;
+
+        //素材は全部取り込む
+        //
+        const plusBtn = document.querySelector("#plus");
+        console.log(plusBtn);
+
+
+
+
+
+
+        let a; //変数の宣言
+        a = 10; //変数aに値(10)を代入
+        console.log(a);
+        let b = 20;
+        //宣言と代入を同時に行う
+        console.log(b); //20
+        b = 30;
+        console.log(b); //30
+        console.log("b"); //クォーテーションは、文字列　変数として扱わない
+        //let b = 40;　同じ変数では、宣言ができない。
+    </script>
+</body>
+
+</html>
