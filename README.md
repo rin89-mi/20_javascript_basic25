@@ -20,15 +20,8 @@ document,querySelector('CSSセレクター');
 Element.textCount = '追加する文字列';
 '''
 
-
-
 ###　イベント
 
 '''
 Btn.addEventListner('click',function)
 '''
-
-
-
-
-###テスト1
