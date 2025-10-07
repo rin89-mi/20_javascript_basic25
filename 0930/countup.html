@@ -5,6 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>カウントアップ装置</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -15,12 +17,13 @@
         //変数を使って０を代入
         let count = 0
         console.log(count); //コンソールにcountを表示 (コンソール　ディベロッパーツールのコンソール)
-        let counter = document.querySelector('#counter');
+        let counter = document.querySelector('p#counter');
         //documentはhtmlのこと
         //cssセレクターは、cssで使うセレクターのこと
         console.log(counter); //pが入っている
         //p要素のテキストをcount(0)にする
-        counter.textContent = count;
+        //プロパティー
+
 
         //素材は全部取り込む
         //
@@ -30,17 +33,35 @@
 
 
 
+        //クリックイベントを登録
+        plusBtn.addEventListener("click", function () {
+            console.log("クリックしたぞ");
+            //countに+1をする
+            //count = count + 1;
+            //インクリメント
+            count++;
+            console.log(count);
+            counter.textContent = count;
+        })
+
+
+
+
 
 
         let a; //変数の宣言
+        console.log(a);
         a = 10; //変数aに値(10)を代入
         console.log(a);
         let b = 20;
         //宣言と代入を同時に行う
         console.log(b); //20
+        //再代入　ok
         b = 30;
         console.log(b); //30
+        //間違えやすいところでクォテーションを入れない
         console.log("b"); //クォーテーションは、文字列　変数として扱わない
+        //再宣言 no
         //let b = 40;　同じ変数では、宣言ができない。
     </script>
 </body>
