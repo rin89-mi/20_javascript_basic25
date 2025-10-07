@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ミニクイズ</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #question {
+            font-size: 1.2rem;
+            margin: 15px 0;
+            padding: 10px;
+            background: #fff;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+        }
+
+        #answer {
+            padding: 8px;
+            font-size: 1rem;
+            width: 200px;
+            margin-right: 8px;
+        }
+
+        #next {
+            padding: 8px 16px;
+            font-size: 1rem;
+            background-color: #0078d7;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #next:hover {
+            background-color: #005fa3;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #444;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>以下のクイズに答えてください。</h2>
+    <p id="question"></p>
+    <input type="text" id="answer" placeholder="答えを入力" />
+    <button id="respond">回答する</button>
+    <p id="result"></p>
+    <button id="showAll">解答を見る</button>
+</body>
+<script>
+    //要素を取得し、変数に代入
+    // 問題
+    const questionElem = document.querySelector('#question');
+    // 回答を入力するテキストフィールド
+    const answerInput = document.querySelector('#answer');
+    // 回答するボタン
+    const respondBtn = document.querySelector('#respond');
+    // 正解・不正解の表示
+    const resultMessage = document.querySelector('#result');
+
+    //配列
+    const questions = ['トライデントコンピュータ専門学校の略称は？', '月に初めて着陸したロケットは？', '5-2は？'];
+
+    //正解
+    const ansewer = ['TSIT', 'アポロ11号', '3'];
+
+    //問題の配列から問題を取得
+    let index = 0;
+    //indexは0,配列questionsの添字に当てはめる
+    //問題表示部分に配列から1目が表示されている
+    questionElem.textContent = questions[index];
+
+</script>
+
+<script>
+    const interests = ['読書', '料理', 'キャンプ'];
+    console.log(interests);
+    console.log(interests[0]); //読書
+    console.log(interests[5]); //undefined
+
+    //要素を上書き
+    interests[0] = '散歩';
+    console.log(interests); //['散歩','料理','キャンプ']
+
+    //もともとないindexに代入
+    interests[3] = 'ゲーム';
+    console.log(interests); //['散歩','料理','キャンプ','ゲーム']
+
+    const count = interests.length;
+    console.log(count);
+
+    //回答するボタン
+    respondBtn.addEventListener('click', function () {
+        const answer = answerInput.value;
+        //formの値を取りたいときは、.value
+
+        //if文で、回答と解答 (配列ansewrsにある)を比較
+        //inputから数値を取得すると、すべて文字列になる
+        if (answer === ansewers[index]) {
+            resultMessage.textContent = '正解です';
+        } else {
+            resultMessage.textContent = '不正解です';
+        }
+
+        index++; //0→1
+        questionElem.textContent = questions[index];
+        answerInput.value = ''; //初期化
+
+        console.log(answer);
+    });
+</script>
+
+<script>
+    //if文
+    const price = 3000;
+
+    if (price >= 5000) {
+        console.log('送料無料');
+    } else {
+        console.log('送料800円');
+    }
+
+    console.log(Boolean(1));
+    console.log(Boolean(0));
+    console.log('hello'); //true
+    console.log(''); //false
+    console.log(null); //false
+    console.log(undefined); //false
+
+    const name = '';
+    if (name) {
+        console.log('名前が存在します');
+    } else {
+        console.log('名前がありません');
+    }
+
+    console.log(1 == 1); //true
+    console.log(1 == '1'); //true 数値型と文字列を比較しているんだけど、一緒と判断しちゃう。
+    console.log(1 == '1'); //false 今現在は、===3つがデフォルト。
+</script>
+
+</html>
