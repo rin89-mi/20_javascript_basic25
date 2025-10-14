@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lesson</title>
+</head>
+
+<body>
+    <div class="sample">class属性がsample 1個目</div>
+    <div class="sample">class属性がsample 2個目</div>
+    <div class="sample">class属性がsample 3個目</div>
+    <div class="sample">オリジナルのテキストです</div>
+    <script>
+        const elements = document.querySelectorAll('.sample');
+        console.log(elements[1]);
+        console.log(window)
+        //windowオブジェクト内のalert();
+        window.alert('アラートです')
+        window.console.log('windowの中のもの');
+        const tag = document.querySelector('.sample:nth-child(4)');
+        tag.textContent = 'テキストを書き換えた！';
+    </script>
+</body>
+
+</html>
