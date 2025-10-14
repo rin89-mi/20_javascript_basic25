@@ -66,7 +66,7 @@
 </body>
 <script>
     //要素を取得し、変数に代入
-    // 問題
+    // 問題表示
     const questionElem = document.querySelector('#question');
     // 回答を入力するテキストフィールド
     const answerInput = document.querySelector('#answer');
@@ -75,18 +75,69 @@
     // 正解・不正解の表示
     const resultMessage = document.querySelector('#result');
 
-    //配列
-    const questions = ['トライデントコンピュータ専門学校の略称は？', '月に初めて着陸したロケットは？', '5-2は？'];
-
+    // 配列 問題3問
+    const questions = [
+        'トライデントコンピュータ専門学校の略称は？',
+        '月に初めて着陸したロケットは？',
+        '5-2は？',
+    ];
     //正解
-    const ansewer = ['TSIT', 'アポロ11号', '3'];
+    const ansewrs = ['TSIT', 'アポロ11号', '3'];
 
     //問題の配列から問題を取得
     let index = 0;
-    //indexは0,配列questionsの添字に当てはめる
-    //問題表示部分に配列から1目が表示されている
+    //indexは0、配列questionsの添字に当てはめる。
+    //問題表示部分に配列から1問目が表示される。
+    let score = 0
     questionElem.textContent = questions[index];
 
+    //回答するボタン
+    respondBtn.addEventListener('click', function () {
+        const answer = answerInput.value;
+        //formの値を取りたいときは、.value
+        //if文で、回答と解答（配列ansewrsにある）を比較
+        if (answer === ansewrs[index]) {
+            resultMessage.textContent = '正解です';
+            score++;
+        } else {
+            resultMessage.textContent = '不正解です';
+        }
+        index++; //0→1
+        questionElem.textContent = questions[index];
+        answerInput.value = ''; //初期化
+
+        //.lengthは、配列の要素数を取得
+        if (index === questions.length) {
+            questionElem.textContent = '3問中' + score + ' 正解です。';
+            console.log(score); //正解数を表示
+        }
+
+        console.log(answer);
+    });
+</script>
+
+<script>
+    //文字列の連結練習
+    //文字列と数値型の連結
+    console.log('円周率は、' + 3.14 + 'です。');
+    //円周率は、3.14です.
+    //文字列と数値の計算
+    console.log('計算結果:' + 1234 + 5678);
+    //計算結果：12345678　文字列が入った時点(最初)文字列結合
+
+    //数字の計算と文字列
+    console.log(123 + 456 + 'です。');
+    //579です。※文字列が入った時点(最後)で文字列結合になります
+
+    //文字列と(計算)だったら
+    console.log('計算結果：' + (123 + 456));
+    //計算結果：579
+
+    //文字列-数値だったら
+    console.log('2' - 1);
+    console.log('2' * 1);
+    console.log('4' / 2);
+    //1
 </script>
 
 <script>
@@ -95,41 +146,21 @@
     console.log(interests[0]); //読書
     console.log(interests[5]); //undefined
 
-    //要素を上書き
+    //要素の上書き
     interests[0] = '散歩';
-    console.log(interests); //['散歩','料理','キャンプ']
+    console.log(interests); //['散歩', '料理', 'キャンプ']
 
     //もともとないindexに代入
     interests[3] = 'ゲーム';
-    console.log(interests); //['散歩','料理','キャンプ','ゲーム']
+    console.log(interests); //['散歩', '料理', 'キャンプ', 'ゲーム']
 
+    //配列の要素の数（長さ）
     const count = interests.length;
     console.log(count);
-
-    //回答するボタン
-    respondBtn.addEventListener('click', function () {
-        const answer = answerInput.value;
-        //formの値を取りたいときは、.value
-
-        //if文で、回答と解答 (配列ansewrsにある)を比較
-        //inputから数値を取得すると、すべて文字列になる
-        if (answer === ansewers[index]) {
-            resultMessage.textContent = '正解です';
-        } else {
-            resultMessage.textContent = '不正解です';
-        }
-
-        index++; //0→1
-        questionElem.textContent = questions[index];
-        answerInput.value = ''; //初期化
-
-        console.log(answer);
-    });
 </script>
-
 <script>
     //if文
-    const price = 3000;
+    const price = 8000;
 
     if (price >= 5000) {
         console.log('送料無料');
@@ -137,8 +168,8 @@
         console.log('送料800円');
     }
 
-    console.log(Boolean(1));
-    console.log(Boolean(0));
+    console.log(Boolean(1)); //true
+    console.log(Boolean(0)); //false
     console.log('hello'); //true
     console.log(''); //false
     console.log(null); //false
@@ -152,8 +183,8 @@
     }
 
     console.log(1 == 1); //true
-    console.log(1 == '1'); //true 数値型と文字列を比較しているんだけど、一緒と判断しちゃう。
-    console.log(1 == '1'); //false 今現在は、===3つがデフォルト。
+    console.log(1 == '1'); //true 数値型と文字列を比較してるんだけど、一緒と判断しちゃう。
+    console.log(1 === '1'); //false 今現在は、===3つがデフォルト。
 </script>
 
 </html>
