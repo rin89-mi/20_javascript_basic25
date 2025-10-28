@@ -26,6 +26,17 @@ Element.textCount = '追加する文字列';
 Btn.addEventListner('click',function)
 '''
 
+10/28
+html
+disabled  ボタンの無効化
+
+script
+console.log(Math.round(1.4)); //四捨五入 1
+console.log(Math.round(1.5)); //四捨五入 2
+console.log(Math.floor(10.3)); //切り捨て 10
+console.log(Math.ceil(10.3)) //切り上げ 11
+
+currenTime = 現在
 
 
 
