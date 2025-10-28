@@ -47,6 +47,23 @@
                 }
             }
         }
+
+        .gallery img.active {
+            display: inlene;
+        }
+
+        .gallery img.hidden {
+            display: none;
+        }
+
+        img {
+            opacity: 0;
+            transition: opacity 2s ease-in-out 400ms;
+        }
+
+        img.show {
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -66,11 +83,66 @@
         <img src="./images/js_images-005.png" alt="食べ物1" class="food" />
     </div>
     <script>
-        //マッチする要素を全部取るquerySelectorAll
+        // ① buttonと画像の要素を全て取得
+        //マッチする要素を全部とるquerySelectorAll();
+        //#や.がないので要素だよ。
         const buttons = document.querySelectorAll('button');
         const images = document.querySelectorAll('img');
-        console.log(buttons);
-        console.log(imagesq2);
+        // console.log(buttons);
+        // console.log(images);
+
+        // ② buttonsの各要素にイベント（ボタンをクリック）を設定
+        //lengthは、配列の要素数なので4
+        for (let i = 0; i < buttons.length; i++) {
+            //iは、0~3になる
+            buttons[i].addEventListener('click', function () {
+                //nameプロパティを持っているので、.nameでつなげる
+                // console.log(buttons[i].name);
+                // ③ for文で画像ファイルのclassを取得
+                //画像を取得
+                for (let j = 0; j < images.length; j++) {
+                    //class名を取得=オブジェクトの中身を調査
+                    // console.log(images[j].className);
+                    // ④ buttonのname属性とimgのclass属性で判定
+                    if (buttons[i].name === 'all') {
+                        // ⑤ classListオブジェクトでclassを操作
+                        // ⑥ allの場合の判定を追加
+                        images[j].classList.remove('hidden');
+                        images[j].classList.add('active');
+                    } else if (images[j].classList.contains(buttons[i].name)) {
+                        // images[j].style.display = 'inline'; //表示される
+                        images[j].classList.add('active');
+                        images[j].classList.remove('hidden');
+                    } else {
+                        // images[j].style.display = 'none'; //非表示にする
+                        images[j].classList.add('hidden');
+                        images[j].classList.remove('active');
+                    }
+                }
+            });
+        }
+
+        //読み込まれたら（イベントload）
+        //loadは、画像や文章が読み込まれたら発動するイベント
+        window.addEventListener('load', function () {
+            for (let i = 0; i < images.length; i++) {
+                setTimeout(function () {
+                    images[i].classList.add('show');
+                }, (i + 1) * 500);
+            }
+        });
+        /* buttons[0].addEventListener('click', function () {
+          console.log('all');
+        });
+        buttons[1].addEventListener('click', function () {
+          console.log('animal');
+        });
+        buttons[2].addEventListener('click', function () {
+          console.log('scenery');
+        });
+        buttons[3].addEventListener('click', function () {
+          console.log('food');
+        }); */
     </script>
 </body>
 
