@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>おにぎり職人ゲーム</title>
+</head>
+
+<body>
+    <h1>🍙 おにぎり職人チャレンジ！</h1>
+    <p>
+        ボタンをクリックしてしゃけおにぎりを握ろう。<br />具材はランダムで決まるよ！
+    </p>
+    <button id="makeBtn">おにぎりを握る</button>
+    <p id="log">具材がここに表示されます。</p>
+    <p id="shakeCount"><span>0</span> 回</p>
+    <script>
+        //Q5で利用する
+        const shakeCount = document.querySelector('#shakeCount span');
+        let shakeCountNum = 0;
+        //ここに記述していきます。
+        // function makeOnigiri() {
+        //     console.log("おにぎりを握った！")
+        // }
+
+        // makeOnigiri('')
+
+        const button = document.querySelector('button');
+        button.addEventListener('click', function () {
+            console.log();
+        })
+
+        //解答
+        //関数の定義 fubction　関数名(){}
+        function makeOnigiri() {
+            console.log('おにぎりを買った！')
+        }
+        //関数の呼び出し (実行)関数名();
+        makeOnigiri();
+
+        //配列の作り方
+        const ingreddients = ['しゃけ', 'うめ', 'こんぶ', 'ツナマヨ'];
+
+        //クリックイベント
+        //クリックするものを読み込んで
+        const makeBtn = document.querySelector('#makeBtn');
+        //クリックしたらイベント(click)
+        makeBtn.addEventListener('click', function () {
+            //処理
+            //ランダム、配列要素の数を最大に
+            const index = Math.floor(Math.random() * ingredients.length);
+            const result = ingredients[index];
+            console.log(result);
+
+
+
+
+            //05
+            if (result === )
+        })
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

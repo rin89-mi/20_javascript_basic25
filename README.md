@@ -39,6 +39,88 @@ console.log(Math.ceil(10.3)) //切り上げ 11
 currenTime = 現在
 
 
+関数
+function makeOnigiri(){
+            console.log('おにぎりを買った！')
+        }
+        makeOnigiri();
+
+// 1. button要素を全て取得して、変数buttonsに代入する
+const buttons = document.querySelectorAll('button');
+console.log(buttons);
+
+// 2. buttonsの要素数分、ランダムな数（0〜8）を生成する
+const randomNum = Math.floor(Math.random()*9)
+console.log(randomNum);
+
+
+
+//html
+<!-- <h1>当たりを探せ！</h1>
+    <div class="buttons">
+      <button>押す</button>
+      <button>押す</button>
+      <button>押す</button>
+      <button>押す</button>
+      <button>押す</button>
+      <button>押す</button>
+      <button>押す</button>
+      <button>押す</button>
+      <button>押す</button>
+    </div> -->
+
+//css
+h1 {
+  text-align: center;
+}
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 500px;
+  margin-inline: auto;
+}
+button {
+  padding: 10px;
+  font-size: 16px;
+}
+body.winner {
+  background-color: pink;
+}
+body.loser {
+  background-color: #ccc;
+}
+
+
+//js
+//ボタンを押して当たったら背景がピンク色、はずれたらグレー色になるようにしてください。
+
+// 1. button要素を全て取得して、変数buttonsに代入する
+const buttons = document.querySelectorAll('button');
+console.log(buttons);
+
+// 2. buttonsの要素数分、ランダムな数（0〜8）を生成する
+const randomNum = Math.floor(Math.random() * 9)
+console.log(randomNum);
+
+// 3. for文で、buttonsの要素数分、クリックイベントを設定する
+
+for(let i = 0; i < buttons.length; i++){
+buttons[i].addEventListener('click',function(){
+  //console.log('クリックしたぞ' + i);
+  const bodyElm = document.querySelector('body');
+  console.log(i,randomNum);
+  if(randomNum === i){
+    bodyElm.classList.remove('loser');
+    bodyElm.classList.add = ('winner');
+  }else{
+    bodyElm.classList.remove('loser');
+    bodyElm.classList.add = ('winner');
+  }
+})
+}
+
+
 
 
 

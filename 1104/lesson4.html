@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>まとめ</title>
+    <style>
+        .doctitle {
+            color: #ff0000;
+        }
+
+        /*スペースの意味=子孫セレクター*/
+        .doctitle span {
+            color: #ccc;
+        }
+
+        .green {
+            color: green;
+        }
+
+        .orange {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <!--要素の取得(document.querySelector(cssセレクター))-->
+    <!--クラスは. idは# 属性セレクター[type]-->
+    <!--document.querySelector('h1');-->
+    <!--document.querySelector('.doctitle span')-->
+    <h1 class="doctitle"><span>1</span>タイトルですよ。</h1>
+    <h2>サブタイトル</h2>
+    <ul>
+        <li>1</li>
+        <li class="green">2</li>
+        <li>3</li>
+        <li>4</li>
+        <li class="orange">5</li>
+        <li>6</li>
+    </ul>
+
+
+    <script>
+        // 変数への代入 (const 変数名 = 代入するのも)
+        //const 変数名 = docment.querySelector('cssセレクター')
+        // 変数はconstとlet
+        const title = document.querySelector('.doctitle span');
+        const num = 0;
+        console.log(title); //<span>1</span>
+        console.log(num); //0
+        //constとletの使い分け
+        const text = "コンスト";
+        //text = 'レット'; //って入れられない、再宣言✕再代入
+        let text2 = 'レット';
+        text2 = 'レット２' //置き換えられる。再宣言✗再代入は◯
+        //クリックイベント(取得した要素.addEventListener(cssセレクター))
+        title.addEventListener('click', function () {
+            alert('スパン') //スパンの部分を押すとアラートが出る
+        })
+
+        //サブタイトルをクリックしたら、アラートでサブタイトルと出るようにする
+        const subtitle = document.querySelector('h2');
+        console.log(subtitle); //コンソールに表示
+        subtitle.addEventListener('click', function () {
+            alert('サブタイトル')
+        })
+
+        //複数の要素取得 (document.querySelectorAll(cssセレクター);)
+        const lists = document.querySelectorAll('li');
+        console.log('lists');
+        //Nodelist = 配列っぽいもの　＝　インデックス・添字(0から始まる)
+
+        //配列の添字
+        //後ろに[]でインデックスの数値を入れる
+        console.log(lists[2]);
+        console.log(lists[4]);
+
+        //if文
+        //数値型 "",''なし
+        let number = 3;
+        if (number === 1) {
+            console.log('1です。')
+            //文字列の場合''または""で囲まれる
+        } else if (number === 2) {
+            console.log('2です。')
+        } else {
+            console.log('それ以外です。')
+        }
+
+        //配列の要素数を使った、for文
+        const animals = ['いぬ', 'ねこ', 'リス', 'サメ'];
+        console.log(animals[1]);
+        //いぬからサメまで回るのに４回いるから
+        for (let i = 0; animals.length; i = i + 1) {
+            console.log(animals[i])
+        }
+
+        //listsをループさせる
+        //配置の要素数.length
+        for (let i = 0; i < lists.length; i++) {
+            console.log(lists[i]);
+        }
+
+        //クラス属性
+        lists[1].classList.add('green');
+
+    </script>
+
+
+</body>
+
+</html>
