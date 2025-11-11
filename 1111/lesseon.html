@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習</title>
+</head>
+
+<body>
+    <script>
+        //オブジェクトの書き方
+        const book = { title: '吾輩は猫である', author: '夏目漱石', page: 620 };
+        console.log(book);
+        console.log(book.title); //吾輩は猫である＝ドット表記法
+        console.log(book['title']); //吾輩は猫である＝ブランケット表記法
+
+        const book2 = { title: '吾輩は猫である' };
+        console.log(book2);
+        book2.author = '夏目漱石'; //.キーでなければ追加
+        console.log(book2);
+
+        book2.title = '坊っちゃん';
+        console.log(book2); 44
+
+
+    </script>
+</body>
+
+</html>

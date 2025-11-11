@@ -122,7 +122,18 @@ buttons[i].addEventListener('click',function(){
 
 
 
+オブジェクトの書き方
+const 〇〇　= {キー1:値1,キー2:値2};
+/*オブジェクトは順番を保証しない*/
 
+
+documentの縦の長さ取得
+const fullHeight = document.documentElement.scrollHeight;
+console.log(fullHeight); //2400
+
+現在のスクロールの位置
+const scrollY = window.scrollY;
+console.log(scrollY);
 
 
 
