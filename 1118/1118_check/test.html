@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中間テスト</title>
+
+
+</head>
+
+<body>
+    <div class="images">
+
+    </div>
+
+
+    <!--問題4-->
+    <p><span>トライデントコンピュータ専門学校</span>は愛知県名古屋市にあり、1984年に開校。IT技術者多数育成。現在、情報処理系3学科とCG／ゲーム開発／<span>Webデザイン</span>／CADなどの学科もあり、卒業生の<span>就職実績</span>も豊富です。
+    </p>
+
+
+    <script>
+        //問題1
+        const school = 'トライデントコンピュータ専門学校';
+        const course = 'Webデザイン学科';
+        console.log(school + course);
+
+        //問題2
+        // const images = document.querySelector('.img_cat');
+        // const catImg = images;
+        // console.log(catImg.alt);
+
+        //問題3
+        const goranger = ['アカレンジャー', 'アオレンジャー', 'ミドレンジャー', 'キレンジャー', 'モモレンジャー'];
+        console.log(goranger[4]);
+        for (let i = 0; i < goranger.length; i++) {
+            console.log(goranger[i]);
+        }
+
+        //問題4
+        const textContent = document.querySelector('span');
+        textContent.addEventListener('click', function () {
+            textContent.style.color = 'red';
+            textContent.style.fontWeight = 900;
+        })
+
+
+    </script>
+
+</body>
+
+</html>
