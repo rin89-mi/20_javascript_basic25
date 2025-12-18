@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12星座の星占い</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="backimg">
+    <div class="menu-icon" id="menuBtn">
+        ✦
+    </div>
+
+    <!-- 星座メニュー -->
+    <nav class="star-menu" id="starMenu">
+        <ul>
+            <li><a href="#aries">牡羊座</a></li>
+            <li><a href="#taurus">牡牛座</a></li>
+            <li><a href="#gemini">双子座</a></li>
+            <li><a href="#cancer">蟹座</a></li>
+            <li><a href="#leo">獅子座</a></li>
+            <li><a href="#virgo">乙女座</a></li>
+            <li><a href="#libra">天秤座</a></li>
+            <li><a href="#scorpio">蠍座</a></li>
+            <li><a href="#sagittarius">射手座</a></li>
+            <li><a href="#capricorn">山羊座</a></li>
+            <li><a href="#aquarius">水瓶座</a></li>
+            <li><a href="#pisces">魚座</a></li>
+        </ul>
+    </nav>
+    <h1 class="title">12星座の星占い</h1>
+    <div class="slider-container">
+        <button class="arrow left" id="prevBtn">←</button>
+        <div class="slider">
+            <div class="slider-inner">
+                <!-- 1ページ目 -->
+                <div class="slide">
+                    <div class="zodiac-item" id="aries">
+                        <p class="name">牡羊座（おひつじ座）</p>
+                        <p class="date">3月21日〜4月19日</p><button class="btn">占う</button>
+                    </div>
+                    <div class="zodiac-item" id="taurus">
+                        <p class="name">牡牛座（おうし座）</p>
+                        <p class="date">4月20日〜5月20日</p><button class="btn">占う</button>
+                    </div>
+                    <div class="zodiac-item" id="gemini">
+                        <p class="name">双子座（ふたご座）</p>
+                        <p class="date">5月21日〜6月21日</p><button class="btn">占う</button>
+                    </div>
+                    <div class="zodiac-item" id="cancer">
+                        <p class="name">蟹座（かに座）</p>
+                        <p class="date">6月22日〜7月22日</p><button class="btn">占う</button>
+                    </div>
+                </div>
+
+                <!-- 2ページ目 -->
+                <div class="slide">
+                    <div class="zodiac-item" id="leo">
+                        <p class="name">獅子座（しし座）</p>
+                        <p class="date">7月23日〜8月22日</p><button class="btn">占う</button>
+                    </div>
+                    <div class="zodiac-item" id="virgo">
+                        <p class="name">乙女座（おとめ座）</p>
+                        <p class="date">8月23日〜9月22日</p><button class="btn">占う</button>
+                    </div>
+                    <div class="zodiac-item" id="libra">
+                        <p class="name">天秤座（てんびん座）</p>
+                        <p class="date">9月23日〜10月23日</p><button class="btn">占う</button>
+                    </div>
+                    <div class="zodiac-item" id="scorpio">
+                        <p class="name">蠍座（さそり座）</p>
+                        <p class="date">10月24日〜11月22日</p><button class="btn">占う</button>
+                    </div>
+                </div>
+
+                <!-- 3ページ目 -->
+                <div class="slide">
+                    <div class="zodiac-item" id="sagittarius">
+                        <p class="name">射手座（いて座）</p>
+                        <p class="date">11月23日〜12月21日</p><button class="btn">占う</button>
+                    </div>
+                    <div class="zodiac-item" id="capricorn">
+                        <p class="name">山羊座（やぎ座）</p>
+                        <p class="date">12月22日〜1月19日</p><button class="btn">占う</button>
+                    </div>
+                    <div class="zodiac-item" id="aquarius">
+                        <p class="name">水瓶座（みずがめ座）</p>
+                        <p class="date">1月20日〜2月18日</p><button class="btn">占う</button>
+                    </div>
+                    <div class="zodiac-item" id="pisces">
+                        <p class="name">魚座（うお座）</p>
+                        <p class="date">2月19日〜3月20日</p><button class="btn">占う</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="arrow right" id="nextBtn">→</button>
+    </div>
+
+    <script src="script.js">
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #fafafa;
+}
+
+/* 宇宙っぽいハンバーガーアイコン */
+.menu-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 9999;
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.menu-icon:hover {
+    transform: scale(1.2);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1);
+}
+
+/* メニュー（宇宙ガラス） */
+.star-menu {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 220px;
+    height: 100%;
+    background: rgba(15, 20, 40, 0.7);
+    backdrop-filter: blur(8px);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
+    padding: 30px 20px;
+    transition: right 0.4s ease;
+    z-index: 9998;
+}
+
+.star-menu.active {
+    right: 0;
+}
+
+/* メニューの文字 */
+.star-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.star-menu ul li {
+    margin: 18px 0;
+}
+
+.star-menu a {
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.star-menu a:hover {
+    color: #7ab8ff;
+    text-shadow: 0 0 8px #7ab8ff;
+}
+
+.backimg {
+    background-image: url(./images/back:img.png);
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+.slider-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+}
+
+.arrow.left {
+    left: -50px;
+}
+
+.arrow.right {
+    right: -50px;
+}
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-inner {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.slider-inner>.slide {
+    min-width: 100%;
+}
+
+.slide {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.zodiac-item {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.btn {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    background: #ED1A3D;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border-bottom: 0.1875em solid #00122e;
+    color: #fff;
+    display: inline-block;
+    padding: 0.6em 2em;
+    margin: 0 0 1em;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.btn:hover {
+    border-bottom-color: transparent;
+    transform: translateY(0.1875em);
+}

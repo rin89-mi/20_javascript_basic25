@@ -2,8 +2,8 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>占いの館</title>
     <style>
         body {
@@ -59,82 +59,78 @@
 <body>
     <button id="btn">占う</button>
     <div id="result"></div>
-
     <script>
-        //     1.配列リテラルを作る
+        // 配列リテラルを作る
         const luckList = ['大吉', '中吉', '小吉', '凶'];
         //ラッキーカラー
         const colorList = ['red', 'blue', 'green', 'yellow'];
-        //ラッキーアイテム
-        const itemList = ['お守り', 'ノート', 'スマホ', 'コーヒー'];
+        // ラッキーアイテム
+        const itemList = ['おまもり', 'ノート', 'スマホ', 'コーヒー'];
 
-        //     2.オブジェクトリテラルでメッセージを書く
-        //キーが文字列なのにクォーテーションがない場合は、文字列として使う
+        // オブジェクトリテラルでメッセージを書く
+        //　キーが文字なのにクォテーションがない場合は、文字列として扱う
         const massages = {
             大吉: '今日は最高の日になりそう',
             中吉: '穏やかに過ごせる一日です',
             小吉: '小さな幸せを見つけよう',
             凶: '焦らず落ち着いて行動しよう',
-            //key:値
-        }
+        };
 
-        //     3.引数・戻り値のある関数式を作る
-        console.log(luckList[0]); //大吉
-        const number = Math.floor(Math.random() * luckList.length);//0~3のランダム
+        // 引数・戻り値のある関数式を作る
+        console.log(luckList[0]); // 大吉
+        const number = Math.floor(Math.random() * luckList.length); //0〜3のランダムな整数
         console.log(luckList[number]);
 
+        //ランダムな要素を返す関数式getRandomElement
         const getRandomElement = function (array) {
+            //戻って来る
             return array[Math.floor(Math.random() * array.length)];
         };
 
-        //ランダムカラー　※引数は配列
-        //const colorList = ['red','blue','green','yellow'];
+        //ランダムなカラー ※ 引数は配列
+        //const colorList = ['red', 'blue', 'green', 'yellow'];
         const colors = getRandomElement(colorList);
-        console.log(colors); //例:'green'
+        console.log(colors); // 例: 'green'
 
-        //     4.1回分の占い結果を作る関数式getFortune
+        // 1回分の占い結果を作る関数式getFortune
         const getFortune = function () {
             //getRandomElement関数を使う、関数の中に関数
-            const luck = getRandomElement(luckList);//ランダムな運勢
-            const color = getRandomElement(colorList);//ランダムなラッキーカラー
-            const item = getRandomElement(itemList); //ランダムなラッキーアイテム
-            //メッセージは、オブジェクトから取得
-            //大吉、中吉、小吉、凶のどれか
-            //オブジェクトの値を取る方法は、2通りある.ドットとブラケット
-
-            const massage = massages[luck];//オブジェクトからメッセージを取得
+            const luck = getRandomElement(luckList); // ランダムな運勢
+            const color = getRandomElement(colorList); // ランダムなラッキーカラー
+            const item = getRandomElement(itemList); // ランダムなラッキーアイテム
+            // メッセージは、オブジェクトから取得
+            // 大吉、中吉、小吉、凶のどれか
+            // オブジェクトの値をとる方法は、2通りある.ドットとブラケット表記
+            // 文字列のときは、ブラケット表記を使う
+            const message = massages[luck]; // オブジェクトからメッセージを取得
             //戻り値がオブジェクト
             return {
                 luck: luck,
                 color: color,
                 item: item,
-                massage: massage,
-            }
+                message: message,
+            };
         };
 
-        //関数の実行、でも値はない
+        // 関数の実行、でも値は来ない。
         // const result = getFortune();
         // console.log(result);
 
-        //     5.ボタンをクリックしたときのイベント（HTMLを書き換えて表示＋アニメーション）
+        // ボタンをクリックしたときのイベント（HTMLを書き換えて表示＋アニメーション）
         const btn = document.querySelector('#btn');
         const result = document.querySelector('#result');
-        btn, addEventListener('click', () => {
-            const result0bject = getFortune(); //占い結果を取得
-            let message = result0bject.message //メッセージだけ、別取り
-            //アロー関数 p161
-            //textContentプロパティで中身を置き換え
-            result.innerHTML = `<h2>${result0bject.colorluck}</h2>
-            <p>ラッキーカラー:${result0bject.color}</P>
-                <p>ラッキーアイテム:${result0bject.item}</p>
-                <p>${message}</p>`;
+        btn.addEventListener('click', () => {
+            const resultObject = getFortune(); //占い結果を取得
+            let message = resultObject.message; //メッセージだけ、別取り
+            // アロー関数って言います。
+            // textContentプロパティで中身を書き換え
+            result.innerHTML = `<h2>${resultObject.luck}</h2>
+        <p>ラッキーカラー：${resultObject.color}</p>
+        <p>ラッキーアイテム：${resultObject.item}</p>
+        <p>${message}</p>`;
+            //アニメーション
+            result.classList.add('show');
         });
-
-
-
-
-
-        //     4.1回分の占い結果を作る関数式getFortune
     </script>
 </body>
 

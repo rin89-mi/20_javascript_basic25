@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>振り返りテスト</title>
+</head>
+
+<body>
+    <script>
+        const item = {
+            name: 'Pen',
+            price: 120
+        };
+
+        const { name: productName } = item
+        console.log('productName');
+
+        const fruit = {
+            type: 'Apple',
+            color: 'red'
+        };
+
+        fruit.color = 'greem';
+
+
+        // 次のオブジェクトを要素に持つ配列があります。
+        // 2つ目（index1）のnameの値を取り出し、変数 animalName に代入してコンソールに表示するコードを書きなさい。
+        const animals = [
+            { name: 'ポチ', age: 5 },
+            { name: 'たま」', age: 2 }
+        ];
+
+        console.log(animals[1].name);
+
+
+        // この関数を実行し、引数を使って、「こんにちは Yuta さん」と表示させるコードを書きなさい。
+        function greet(name) {
+            console.log('こんにちは ' + name + ' さん');
+        }
+
+        console.log('こんにちは${name}さん');
+        greet('Yuta');
+
+        // 引数numを受け取り、numが100以上なら true、100未満ならfalseを返す関数 isBig を定義しなさい。
+        //     150を渡して結果をコンソールに表示してください。
+
+
+    </script>
+</body>
+
+</html>

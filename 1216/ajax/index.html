@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>同期通信 vs 非同期通信</title>
+    <script src="fetch.js" defer></script>
+    <style>
+        .resultFrame {
+            width: 100%;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>同期通信（iframe）と非同期通信（fetch）の比較</h1>
+    <h2>① iframe（同期的な読み込み）</h2>
+    <iframe class="resultIframe" src="news.html"></iframe><br />
+    <hr />
+    <h2>② fetch（Ajax：非同期通信）</h2>
+    <div class="resultFetch">ここにお知らせが表示されます</div>
+    <button class="loadAjaxBtn">お知らせを読み込む（非同期）</button>
+</body>
+
+</html>
