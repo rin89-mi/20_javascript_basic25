@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NodeListとhtml</title>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        const nodes = document.querySelectorAll('div');
+        console.log(nodes);
+        const nodes2 = document.getElementsByTagName('div');
+        console.log(nodes2); //htmlCollection
+        //配列っぽいデータ、配列ではない。Arraylike
+        // nodes.push('新しい要素'); //使えない
+        //使うためには、配列に変換してから使う必要がある。
+        const array = Array.from(nodes);
+        array.push('新しい要素');
+        console.log(array); //['1', '2', '3', '新しい要素']
+    </script>
+</body>
+
+</html>

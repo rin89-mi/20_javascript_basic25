@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スコープほか</title>
+</head>
+
+<body>
+    <script>
+
+        //varは、関数スコープ
+        //let,constは、ブロックスコープ
+        //関数スコープ　（ローカルスコープ）
+        //関数の定義
+        //関数スコープ
+        function sample() {
+            const x = 10;
+            console.log(x); //sampleの関数内部からxを参照することができる。
+        }
+
+        //関数の呼び出し
+        sample();//10
+        console.log(x);//エラー:xは関数の中でしか使えない
+
+        //ブロックスコープ　
+        if (true) {
+            const x = 10;
+            console.log(x); //ブロック内部からxを参照することができる。
+        }
+        console.log(x); //ブロックの外部からxを参照することができない。
+
+        const z = 1; //グローバルスコープ
+        function doSomething() {
+            console.log(z); //zを参照することができる
+        }
+        if (true) {
+            console.log(z); //zを参照することができる
+        }
+        //関数の呼び出し（関数の実行）
+        doSomething();
+
+
+        //スコープの優先順位
+        const a = 1; //グローバルスコープ
+        function doSomething1() {
+            console.log(a + 'ブロックスコープ');//ブロクスコープからaを参照
+        }
+
+        function doSomething2() {
+            const b = 1;//関数スコープ
+            //     // const b =2;//使うことができない
+            //let,constでもエラーになる
+            //letがなければ、再代入できる
+            //constだったら、再代入できません
+            //ES2015以降は、verは使わないことが推奨されています。
+        }
+
+        //オブジェクトのメソッド
+        const person = {
+            name: 'アリス', //文字列　＝＝　プロパティ
+            age: 20, //数値　＝＝　プロパティ
+            insterrest: ['読書', '料理'], //配列　＝＝　プロパティ
+            greet: function () {
+                console.log('こんにちは');
+                //windowオブジェクト　+　組み込み関数
+            }, //関数式　==　メソッド
+        };
+
+        //関数を呼び出す　（実行）
+        person.greet(); //こんにちは
+        //何かの値に()がついていたら、それは関数の呼び出し（実行）
+        //関数が宣言されているか？もしくは、javascriptに組み込まれていつ関数か？
+
+        //アリス
+        console.log('person.name'); //アリス
+
+        //メソッドのthis
+        const person2 = {
+            name: 'Alice',
+            greet: function () {
+                //オブジェクト内部で使う場合は、thisを使う
+                console.log('こんにちは、私は${name}です。');
+                //テンプレートリテラル（変数名）
+            },
+        };
+
+        //オブジェクトの値を上書き
+        person2.name = 'Bob';//BObを代入
+        //メソッドの呼び出し
+        person2.greet();//こんにちは、私はBobです。
+        //Bob
+        console.log(person.name); //Bob
+
+        //メソッドの呼び出し
+        persion2.greet(); //こんにちは、Aliceです。
+
+        //配列のlength(要素の数)
+        const interests = ['読書', '料理', 'キャンプ'];
+        const count = interests.length;
+        console.log(count); //3
+
+        //配列の最後尾に要素を追加
+        interests.push('散歩'); //配列の末尾に要素を追加
+        console.log(interests); //['読書','料理','キャンプ','散歩']
+        console.log(interests[3]); //散歩
+
+        //配列の最後尾から値を取り出す
+        const alphabet = ['a', 'b', 'c'];
+        const last = alphabet.concatpop();
+        console.log(last); //c
+        console.log(alphabet); //['a','b']
+        //pop()は、配列の最後尾の要素を取り出すと、同時に配列の要素数も減る
+
+        //特定の要素が配列に含まれているか？
+        const fruits = ['りんご', 'みかん', 'バナナ'];
+        const check1 = fruits.includes('りんご');
+        console.log(check1);
+        const check2 = furuit.includes('ぶどう');
+        console.log(checl2);
+
+        //配列要素の結合と文字列の分割
+        const join = interests.join('と');
+        console.log(join); //読書と料理とキャンプと散歩
+
+        //文字列の分割（文字列から配列の生成）
+        const string = '読書＆料理＆キャンプ';
+        const split = string.split('＆');
+        console.log(split); //['読書','料理','キャンプ']
+    </script>
+
+</body>
+
+</html>
